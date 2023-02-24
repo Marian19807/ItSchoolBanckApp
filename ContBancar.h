@@ -21,6 +21,6 @@ public:
 	inline std::string getIban() { return IBAN; }
 	inline void setSoldValue(int value) { sold = value; }
 	~ContBancar();
-
+	
 };
 
