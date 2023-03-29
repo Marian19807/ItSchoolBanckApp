@@ -8,9 +8,12 @@ class Bank
 	std::string createIban();
 public:
 	Bank();
-
+	bool schimbare;
+	bool testNume;
+	bool testPrenume;
 	~Bank();
 	void adaugareCont();
 	void vizualizareConturi();
+	void modificareCont();
 };
 

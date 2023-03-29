@@ -2,7 +2,7 @@
 #include<string>
 enum class TIP_CONT
 {
-	CONT_RON , CONT_EURO
+	CONT_RON, CONT_EURO, CONT_DOLAR, NECUNOSCUT
 
 };
 class ContBancar
@@ -18,8 +18,11 @@ public:
 	inline std::string getNume() { return nume; }
 	inline std::string getPrenume() { return prenume; }
 	inline int getSold() { return sold; }
-	inline std::string getIban() { return IBAN; }
+	std::string getIban();
 	inline void setSoldValue(int value) { sold = value; }
+	void setNume(std::string numeClient);
+	void setPrenume(std::string prenumeClient);
+
 	~ContBancar();
 	
 };
