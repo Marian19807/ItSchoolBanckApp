@@ -18,10 +18,11 @@ public:
 	inline std::string getNume() { return nume; }
 	inline std::string getPrenume() { return prenume; }
 	inline int getSold() { return sold; }
-	std::string getIban();
+	inline std::string getIban() {   return IBAN;}
 	inline void setSoldValue(int value) { sold = value; }
 	void setNume(std::string numeClient);
 	void setPrenume(std::string prenumeClient);
+	
 
 	~ContBancar();
 	

@@ -1,34 +1,37 @@
 
 
 #include <iostream>
+#include <fstream>
 #include"Bank.h"
+
 int main()
 {
+    
     std::string parolaStocata = "password123";
     std::string usserIdStocat = "Marian";
    
     std::string usserId;
     std::string parola;
-    std::cout << "Va rugam introduceti id-ul si parola: \n";
+    std::cout << "Please type in the Id and the password: \n";
     
     for (int i = 0; i < 3; i++)
     {
-        std::cout << "Va rugam introduceti id-ul: \n";
+        std::cout << "Please type in the Id: \n";
         std::cin >> usserId;
-        std::cout << "Va rugam introduceti parola: \n";
+        std::cout << "Please type in the password: \n";
         std::cin >> parola;
         if (usserIdStocat==usserId&&parolaStocata==parola)
         {
             {
-                //instantam o banca
+                //we are creating a bank
                 Bank* itSchoolBank = new Bank();
                 bool isRunning = true;
-                /*std::ofstream test("BazaDeDate.csv");
+                std::ofstream test("BazaDeDate.csv");
                 test << "Test\n";
                 test << "1\n";
-                test << "2\n";*/
-                //test.close();
-               /* std::ifstream testCitire("BazzaDeDate.csv");
+                test << "2\n";
+                test.close();
+                std::ifstream testCitire("BazaDeDate.csv");
                 if (!testCitire.is_open())
                 {
                     std::cout << "Fisierul nu poate fi deschis";
@@ -46,18 +49,18 @@ int main()
 
                 }
 
-                testCitire.close();*/
+                testCitire.close();
 
 
                 do
                 {
                     system("CLS");
-                    std::cout << "Meniu Principal\n";
-                    std::cout << "1-> Adaugare Cont\n";
-                    std::cout << "2-> Vizualizare Conturi\n";
-                    std::cout << "3-> Modificare Conturi\n";
+                    std::cout << "Menu \n";
+                    std::cout << "1-> Add Account\n";
+                    std::cout << "2-> View Accounts\n";
+                    std::cout << "3-> Editing Accounts\n";
                     std::cout << "9-> Exit\n";
-                    std::cout << "Introduceti optiunea: \n";
+                    std::cout << "Type in your option: \n";
                     char optiune;
                     std::cin >> optiune;
                     switch (optiune)
@@ -77,60 +80,42 @@ int main()
 
                         break;
                     case'9':
-                        std::cout << "Multumim\n";
+                        std::cout << "Thank you!\n";
                         isRunning = false;
                         break;
                     default:
                         system("CLS");
-                        std::cout << "Optiunea nu este valida\;";
+                        std::cout << "Invalid Option\;";
                         isRunning = false;
                         break;
                     }
                 } while (isRunning);
 
-
-
-
-
-                //chemam pt test adaugare cont
-               /* itSchoolBank->adaugareCont();
-                itSchoolBank->vizualizareConturi();*/
                 delete itSchoolBank;
             }
             i = 3;
         }
         else
         {
-            //switch (i)
-            //{case'0':
-            //    std::cout << "Ne pare rau, id-ul si parola introduse nu se potrivesc. Mai aveti: " << 2 - i << " incercari; \n";
-            //    break;
-            //case'1':
-            //    std::cout << "Ne pare rau, id-ul si parola introduse nu se potrivesc. Mai aveti: " << 2 - i << " incercare; \n";
-            //    break;
-            //default:
-            //   // std::cout << "Nu mai aveti nicio-o incercare! La revedere!\n";
-            //   // system("pause");
-            //    break;
-            //}
+            
             if(i==0)
             {
                 system("CLS");
-                std::cout << "Ne pare rau, id-ul si parola introduse nu se potrivesc. Mai aveti: " << 2 - i << " incercari; \n";
+                std::cout << "Sorry! The Id and the password do not match. You have: " << 2 - i << " more attempts. \n";
                  
             
             }
             if (i == 1)
             {
                 system("CLS");
-                std::cout << "Ne pare rau, id-ul si parola introduse nu se potrivesc. Mai aveti: " << 2 - i << " incercare; \n";
+                std::cout << "Sorry! The Id and the password do not match. You have: " << 2 - i << " attempt left. \n";
               
 
             }
             if (i == 2)
             {
                 system("CLS");
-                std::cout << "Nu mai aveti nicio-o incercare! La revedere!\n";
+                std::cout << "You have no more attempts! Goodbye!\n";
               
             }
         }
