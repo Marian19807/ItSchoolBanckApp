@@ -41,8 +41,8 @@ std::string Bank::createIban()
 Bank::Bank()
 {
 	 schimbare = false;
-	 testNume=false;
-	 testPrenume=false;
+	 testNume = false;
+	 testPrenume = false;
 }
 
 Bank::~Bank()
